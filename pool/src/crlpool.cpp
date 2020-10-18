@@ -38,7 +38,7 @@ void crlpool::create(name contract, symbol sym, asset reward, uint32_t epoch_tim
         total += itr->total_reward;
         itr++;
     }
-    check(total.amount <= 300000000000000, "Reach the max circulation");
+    check(total.amount <= 100'000 * 10'000'000'000ULL, "Reach the max circulation");
 
     auto pool_id = pools_tbl.available_primary_key();
     if (pool_id == 0) {
